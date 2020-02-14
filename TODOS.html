@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI';
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    #jj{
+        position: absolute;
+        opacity: 0;
+    }
+    body{
+        background-color: rgb(48, 38, 46);
+    }
+    #ox{
+        color:rgb(255, 196, 0);
+        position: absolute;
+        padding: 0px 10px;
+        left: auto;
+        top: 364px;
+        margin-left: 20px;
+        visibility: hidden;
+        transition: transform 0.4s;
+        
+        
+        /* border: red 1px solid; */
+    }
+    #ox:hover{
+        cursor: pointer;
+    }
+    .NN{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #clearButton{
+        background-color: rgb(240, 240, 240);
+        font-size: 15px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 7px;
+        transition: background 0.4s, color 0.4s, visibility 0.3s, opacity 0.3s;
+        visibility: hidden;
+        font-weight: normal;
+        opacity: 0;
+        /* transition: visibility 0.3s;
+        transition: opacity 0.3s; */
+    }
+    #clearButton:hover{
+        background-color: rgb(255, 196, 0);
+        color: white;
+        transition: 0.4s;
+        cursor: pointer;
+    }
+    #barMedium{
+        display: flex;
+
+    }
+    #itemLeft{
+        font-size: 15px;
+        font-weight: normal;
+        
+    }
+    .M_all{
+        margin-left: 8px;
+        font-size: 15px;
+        background-color: rgb(240, 240, 240);
+        padding: 5px 10px;
+        border-radius: 7px;
+        transition: 0.4s;
+        font-weight: normal;
+    }
+    .M_all:hover{
+        background-color: rgb(255, 160, 160);
+        color: white;
+        transition: 0.4s;
+        cursor: pointer;
+
+    }
+    .l1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 40px;
+        border-left: 1px rgb(175, 175, 175) solid;
+        border-right: 1px rgb(175, 175, 175) solid;
+        border-bottom: 1px rgb(175, 175, 175) solid;
+        padding: 10px 30px;
+        background-color: rgb(255, 255, 249);
+        box-shadow:  0 0 6px 1px  rgb(170, 170, 170);
+        /* color: rgb(197, 197, 197); */
+        
+
+    }
+    .bar{
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 40px;
+        border-left: 1px rgb(175, 175, 175) solid;
+        border-right: 1px rgb(175, 175, 175) solid;
+        border-bottom: 1px rgb(175, 175, 175) solid;
+        padding: 10px 30px;
+        background-color: rgb(255, 255, 249);
+        box-shadow:  0 0 6px 1px  rgb(170, 170, 170);
+    }
+    .checkbox{
+        margin-right: 23px;
+        margin-left: -6px;
+        
+        display: inline-block; 
+        height: 30px;
+        width: 30px;
+        
+        background-color: white;
+        border-radius: 50%;
+        vertical-align: middle; 
+        border: 1px solid #ddd;
+        -webkit-appearance: none; 
+        outline: none;
+        cursor: pointer;
+        content: 'v';
+        text-align: center;
+        transition: 0.3s;
+        /* border: orangered 1px solid; */
+    }
+    .checkbox:checked{
+        border-color: rgb(255, 196, 0);
+        transition: 0.3s;
+    }
+    .s{
+
+        margin-left: 10px;
+        margin-bottom: 6px;
+        /* border: 1px red solid; */
+        padding: 0 10px;
+        transition: 0.5s;
+        font-size: 30px;
+    }
+    .s:hover{
+        color: rgb(255, 196, 0);
+        transition: 0.2s;
+        cursor: pointer;
+    }
+
+    /* .checkbox:checked{
+        content: 'v';
+        font-family: 'Segoe UI';
+        color: violet;
+        text-align: center;
+    } */
+
+    .con{
+        /* border: 1px red solid; */
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 200px;
+        
+    }
+    .center{
+        width: 700px;
+        /* border: 1px red solid; */
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #head{
+        font-size: 80px;
+        color: white;
+        margin-top: 200px;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 7px rgb(170, 170, 170);
+        
+        
+    }
+    .IN{
+        font-size: 40px;
+        border: 1px rgb(175, 175, 175) solid;
+        padding: 10px 30px;
+        background-color: rgb(255, 255, 249);
+        box-shadow:  0 0 6px 1px  rgb(170, 170, 170);
+        margin-top: 25px;
+        padding-left: 80px;
+        letter-spacing: 1px;
+
+        width: 700px;
+    }
+
+
+
+    .pa{
+        /* border: red 1px solid; */
+        word-wrap: break-word;
+        width: 390px;
+        /* border: 1px red solid; */
+        margin-bottom: 6px;
+        font-size: 30px;
+        letter-spacing: 1px;
+        color: black;
+        transition: color 0.3s, text-decoration-color 0.3s;
+        text-decoration-line: line-through;
+        text-decoration-color: transparent;
+    
+    }
+
+    .qs{
+        position: absolute;
+        font-size: 23px;
+        /* border: 1px red solid; */
+        margin-left: 0px;
+        visibility: hidden;
+        cursor: pointer;
+        color: transparent;
+        transition: color 0.3s;
+    }
+
+
+</style>
+<body>
+    <p id="jj"></p>
+    <div class="con">
+        <div class="center">
+            <h1 id="head">T O D O S</h1>
+            <form id="form1">
+                <h1 id="ox" onclick="clon()">❯</h1>
+                <input type="text" class="IN" placeholder="To do...">
+                <div class="L">
+                    <!-- <div class="l1">
+                        <input type="checkbox" id="input" class="">
+                        <p id="in">asd</p>
+                    </div> -->
+                </div>
+
+                <div class="bar">
+                    <h1 id="itemLeft">0 item left</h1>
+                    <div id="barMedium">
+                        <h1 class="M_all" id="all" onclick="All()" onmouseover="All2()" onmouseout="All3()">All</h1>
+                        <h1 class="M_all" id="active" onclick="Active()" onmouseover="Active2()" onmouseout="Active3()">Active</h1>
+                        <h1 class="M_all" id="completed" onclick="Completed()" onmouseover="Completed2()" onmouseout="Completed3()">Completed</h1>
+                    </div>
+                    <span id="clearButton" onclick="Clear()">Clear</span>
+                </div>
+            </form>
+            
+        </div>
+
+    </div>
+    <script>
+        var itemsLeft=0;
+
+        var oxc=0;
+        var a=[];
+        var cb_index=0;
+        var all_bars=0;
+        var M_number=0;
+        
+        var form1 = document.querySelector("#form1");
+        form1.addEventListener('submit', function(event){
+            event.preventDefault();
+            var L=document.querySelector(".L");
+            var bools=[];
+            var inp=document.querySelector("input").value;
+            document.querySelector("input").value="";
+            var jjj=document.querySelector("#jj");
+            //alert(inp);
+            jjj.innerText=inp;
+            //alert(jjj.innerText);
+            inp=jjj.innerText;
+            //alert(inp);
+            if(inp!=""){
+
+            
+
+            
+
+            // for(var y in a)
+            // {
+            //     alert(a+"a");
+            //     alert(y+"y");
+            //     bools[y]=document.querySelector(`c${y}`).checked.value;
+            // }
+            // alert(bools);
+            var qs=document.createElement("p");
+            var nodee=document.createTextNode("✓");
+            qs.appendChild(nodee);
+            qs.setAttribute("class","qs");
+            qs.setAttribute("id",`qs${cb_index}`);
+            qs.setAttribute("onclick",`qss(${cb_index})`);
+
+            var divl1=document.createElement("div");
+            divl1.setAttribute("class","l1");
+            divl1.setAttribute("id",`l${cb_index}`);
+            var divNN=document.createElement("div");
+            divNN.setAttribute("class","NN");
+            divl1.appendChild(divNN);
+            var inputc=document.createElement("input");
+            inputc.setAttribute("type","checkbox");
+            inputc.setAttribute("id",`c${cb_index}`);
+            inputc.setAttribute("class","checkbox");
+            inputc.setAttribute("onclick",`cb(${cb_index})`);
+            divNN.appendChild(inputc);
+            divNN.appendChild(qs);
+
+            var ppd=document.createElement("p");
+            ppd.setAttribute("id",`p${cb_index}`);
+            ppd.setAttribute("class","pa");
+            var node = document.createTextNode(`${inp}`);
+            ppd.appendChild(node);
+            divNN.appendChild(ppd);
+            var spans=document.createElement("span");
+            spans.setAttribute("class","s");
+            spans.setAttribute("onclick",`sx(${cb_index})`);
+            spans.setAttribute("id",`x${cb_index}`);
+            var nodex = document.createTextNode("x");
+            spans.appendChild(nodex);
+            divl1.appendChild(spans);
+            L.appendChild(divl1);
+
+
+            
+            
+            
+            a[cb_index]= cb_index;
+            cb_index+=1;
+            all_bars+=1;
+            
+
+            itemsLeft+=1;
+            
+            if(a.length==0){
+                document.querySelector(".bar").style.display="none";
+                
+            // L.innerHTML+=`<div class="l1" id="l${cb_index}"><div class="NN"><input type="checkbox" id="c${cb_index}" class="checkbox" onclick="cb(${cb_index})"><p id="p${cb_index}" class="pa">${inp}</p></div><span class="s" onclick="sx(${cb_index})" id="x${cb_index}">x</span></div>`;
+            }
+            else{
+                document.querySelector(".bar").style.display="flex";
+            }
+            
+            
+            
+            document.querySelector("#itemLeft").innerText=`${itemsLeft} items left`;
+            
+
+            document.querySelector("#ox").style.transform="rotate(0deg)";
+            oxc=0;
+
+            if(a.length>0)
+            {
+                document.querySelector("#ox").style.visibility="visible";
+                
+            }
+            else{
+                document.querySelector("#ox").style.visibility="hidden";
+            }
+
+
+            if(M_number==0){
+                All();
+            }
+            else if(M_number==1){
+                Active();
+            }
+            else if(M_number==2){
+                Completed();
+            }
+
+        }
+
+        });
+        function qss(d){
+            if(document.querySelector(`#c${d}`).checked){
+                document.querySelector(`#c${d}`).checked=false;
+            }
+            else{
+                document.querySelector(`#c${d}`).checked=true;
+            }
+            cb(d);
+        }
+
+
+        function cb(ID){
+            var t=0;
+            var CB=document.querySelector(`#c${ID}`);
+
+            
+            if(CB.checked)
+            {
+                var object=document.querySelector(`#p${ID}`);
+                object.style.color="gray";
+                //object.style.textDecorationLine="line-through";
+                object.style.textDecorationColor="gray";
+                document.querySelector(`#qs${ID}`).style.visibility="visible";
+                document.querySelector(`#qs${ID}`).style.color="rgb(255, 196, 0)";
+                itemsLeft-=1;
+                document.querySelector("#itemLeft").innerText=`${itemsLeft} items left`;
+
+            }
+            else{
+                var object=document.querySelector(`#p${ID}`);
+                object.style.color="black";
+                //object.style.textDecorationLine="none";
+                object.style.textDecorationColor="transparent";
+                document.querySelector(`#qs${ID}`).style.color="transparent";
+                
+                
+                
+                itemsLeft+=1;
+                document.querySelector("#itemLeft").innerText=`${itemsLeft} items left`;
+            }
+            
+
+
+
+            // alert(a.length)
+            // var checked_input_count = document.querySelectorAll('input[type=checkbox]:checked').length;
+            // if(a.length===checked_input_count){
+            //     alert('sayi beraberdi');
+            // }
+            for(var i in a)
+            {
+                
+                var CB=document.querySelector(`#c${i}`);
+                if(CB.checked){
+                    t+=1;
+                }
+                    
+            }
+            if(t==a.length){
+                document.querySelector("#ox").style.transform="rotate(90deg)";
+                oxc=1;
+            }
+            else{
+                document.querySelector("#ox").style.transform="rotate(0deg)";
+                oxc=0;
+            }
+            t=0;
+
+            // alert(object.innerText);
+
+            if(itemsLeft==a.length){
+                document.querySelector("#clearButton").style.opacity="0";
+                document.querySelector("#clearButton").style.visibility="hidden";
+                
+            
+            }
+            else{
+                document.querySelector("#clearButton").style.visibility="visible";
+                document.querySelector("#clearButton").style.opacity="1";
+            }
+            
+            if(M_number==0){
+                All();
+            }
+            else if(M_number==1){
+                Active();
+            }
+            else if(M_number==2){
+                Completed();
+            }
+
+
+
+
+
+
+        }
+
+        function clon(){
+            if(oxc==0){
+                document.querySelector("#ox").style.transform="rotate(90deg)";
+                for(var i in a)
+                {
+                    var CB=document.querySelector(`#c${i}`);
+                    CB.checked=true;
+                    var object=document.querySelector(`#p${i}`);
+                    object.style.color="gray";
+                    //object.style.textDecorationLine="line-through";
+                    object.style.textDecorationColor="gray";
+                    document.querySelector(`#qs${i}`).style.visibility="visible";
+                    document.querySelector(`#qs${i}`).style.color="rgb(255, 196, 0)";
+
+                }
+                oxc=1;
+                itemsLeft=0;
+                document.querySelector("#itemLeft").innerText=`${itemsLeft} items left`;
+                document.querySelector("#clearButton").style.visibility="visible";
+                document.querySelector("#clearButton").style.opacity="1";
+                
+            }
+            else{
+                document.querySelector("#ox").style.transform="rotate(0deg)";
+                for(var i in a)
+                {
+                    var CB=document.querySelector(`#c${i}`);
+                    CB.checked=false;
+                    var object=document.querySelector(`#p${i}`);
+                    object.style.color="black";
+                    //object.style.textDecorationLine="none";
+                    object.style.textDecorationColor="transparent";
+                    document.querySelector(`#qs${i}`).style.color="transparent";
+                }
+                oxc=0;
+                itemsLeft=a.length;
+                document.querySelector("#itemLeft").innerText=`${itemsLeft} items left`;
+                document.querySelector("#clearButton").style.opacity="0";
+                document.querySelector("#clearButton").style.visibility="hidden";
+                
+            }
+            if(M_number==0){
+                All();
+            }
+            else if(M_number==1){
+                Active();
+            }
+            else if(M_number==2){
+                Completed();
+            }
+
+
+
+
+        }
+
+
+
+
+
+        ///////////////////////////////////////////////x clear button
+        function sx(xn){
+            var aa=[];
+            var H=document.getElementById(`l${xn}`);
+            
+            if(!document.querySelector(`#c${xn}`).checked){
+                itemsLeft-=1;
+                document.querySelector("#itemLeft").innerText=`${itemsLeft} items left`;
+            }
+            
+            
+
+            
+            
+            H.remove();
+            //alert("a ilk"+a+" uzunlug: "+a.length);
+            var pp=-1;
+            var bool=false;
+
+            
+            if(a.length>1){
+                //alert(a);
+                for(var p=0;p<(a.length-1);p++)
+                {
+                    //alert("p"+p);
+                    aa[p]=p;
+                    if(xn==p && xn!=(a.length-1)){  
+                        pp=xn;
+                        bool=true;          
+                    }
+                    if(bool){
+                        pp+=1;
+                        document.getElementById(`l${pp}`).setAttribute("id",`l${p}`);
+                        document.getElementById(`c${pp}`).setAttribute("onclick",`cb(${p})`);
+                        document.getElementById(`p${pp}`).setAttribute("id",`p${p}`);
+                        document.getElementById(`c${pp}`).setAttribute("id",`c${p}`);
+                        document.getElementById(`x${pp}`).setAttribute("onclick",`sx(${p})`);
+                        document.getElementById(`x${pp}`).setAttribute("id",`x${p}`);
+                        document.getElementById(`qs${pp}`).setAttribute("onclick",`qss(${p})`);
+                        document.getElementById(`qs${pp}`).setAttribute("id",`qs${p}`);
+                        ;
+                    }
+                    //alert(bool);
+
+                    
+                }
+                //alert(aa);
+                a=aa;
+                //alert(a);
+                cb_index=p;
+            }
+            else if(a.length==1){
+                a=[];
+                cb_index=0;
+            }
+
+
+
+            if(a.length>0)
+            {
+                document.querySelector("#ox").style.visibility="visible";
+                
+            }
+            else{
+                document.querySelector("#ox").style.visibility="hidden";
+                All();
+            }
+
+
+
+
+
+            var t=0;
+            
+            for(var i in a)
+            {
+                //alert(i+" i");
+                var CB=document.querySelector(`#c${i}`);
+                //alert(CB.checked);
+                if(CB.checked){
+                    t+=1;
+                }
+            }
+            //alert(t+"T");
+            //alert(a.length+"  a:" + a);
+            if(t==a.length){
+                document.querySelector("#ox").style.transform="rotate(90deg)";
+                oxc=1;
+            }
+            else{
+                document.querySelector("#ox").style.transform="rotate(0deg)";
+                oxc=0;
+            }
+            t=0;
+
+            if(itemsLeft==a.length){
+                document.querySelector("#clearButton").style.opacity="0";
+                document.querySelector("#clearButton").style.visibility="hidden";
+            }
+            else{
+                // alert(a);
+                // alert(a.length);
+                document.querySelector("#clearButton").style.visibility="visible";
+                document.querySelector("#clearButton").style.opacity="1";
+            }
+
+            
+            if(a.length==0){
+                document.querySelector(".bar").style.display="none";
+                
+            // L.innerHTML+=`<div class="l1" id="l${cb_index}"><div class="NN"><input type="checkbox" id="c${cb_index}" class="checkbox" onclick="cb(${cb_index})"><p id="p${cb_index}" class="pa">${inp}</p></div><span class="s" onclick="sx(${cb_index})" id="x${cb_index}">x</span></div>`;
+            }
+            else{
+                document.querySelector(".bar").style.display="flex";
+            }
+
+        }
+        //////////////////////////////////////////////////////
+
+
+        function Clear(){
+            var GGG=true;
+            while(GGG && a.length>0){
+                for(var z=0;z<a.length;z++){
+                    //alert(z);
+                    //alert(a);
+                    if(document.querySelector(`#c${z}`).checked && a.length>0){
+                        //alert('asd');
+                        sx(z);
+                        break;
+                    }
+                    else if(z==(a.length-1) && !document.querySelector(`#c${z}`).checked && a.length>0)
+                    {
+                        GGG=false;
+                    }
+                    
+                }
+            }
+            //alert(a);
+
+
+            
+
+
+
+
+
+            
+        }
+        function All(){
+            for(var u in a){
+                document.querySelector(`#l${u}`).style.display="flex";
+            }
+            M_number=0;
+            document.querySelector("#all").style.background="rgb(255, 196, 0)";
+            document.querySelector("#all").style.color="white";
+            document.querySelector("#completed").style.background="rgb(240, 240, 240)";
+            document.querySelector("#completed").style.color="black";
+            document.querySelector("#active").style.background="rgb(240, 240, 240)";
+            document.querySelector("#active").style.color="black";
+
+        }
+        function All2(){
+            if(M_number!=0){
+                document.querySelector("#all").style.background="rgb(219, 219, 219)";
+            }
+             
+        }
+        function All3(){
+            if(M_number!=0){
+                document.querySelector("#all").style.background="rgb(240, 240, 240)";
+            }
+        }
+
+        function Active2(){
+            if(M_number!=1){
+                document.querySelector("#active").style.background="rgb(219, 219, 219)";
+            }
+             
+        }
+        function Active3(){
+            if(M_number!=1){
+                document.querySelector("#active").style.background="rgb(240, 240, 240)";
+            }
+        }
+        function Completed2(){
+            if(M_number!=2){
+                document.querySelector("#completed").style.background="rgb(219, 219, 219)";
+            }
+             
+        }
+        function Completed3(){
+            if(M_number!=2){
+                document.querySelector("#completed").style.background="rgb(240, 240, 240)";
+            }
+        }
+
+
+
+
+
+
+        function Active(){
+            for(var u in a){
+                if(document.querySelector(`#c${u}`).checked){
+                    document.querySelector(`#l${u}`).style.display="none";
+                }
+                else{
+                    document.querySelector(`#l${u}`).style.display="flex";
+                }
+            }
+            M_number=1;
+
+            document.querySelector("#completed").style.background="rgb(240, 240, 240)";
+            document.querySelector("#completed").style.color="black";
+
+            document.querySelector("#all").style.background="rgb(240, 240, 240)";
+            document.querySelector("#all").style.color="black";
+            
+            document.querySelector("#active").style.background="rgb(255, 196, 0)";
+            document.querySelector("#active").style.color="white";
+
+        }
+        function Completed(){
+            for(var u in a){
+                if(!document.querySelector(`#c${u}`).checked){
+                    document.querySelector(`#l${u}`).style.display="none";
+                }
+                else{
+                    document.querySelector(`#l${u}`).style.display="flex";
+                }
+            }
+            M_number=2;
+
+            document.querySelector("#completed").style.background="rgb(255, 196, 0)";
+            document.querySelector("#completed").style.color="white";
+
+            document.querySelector("#all").style.background="rgb(240, 240, 240)";
+            document.querySelector("#all").style.color="black";
+            
+            document.querySelector("#active").style.background="rgb(240, 240, 240)";
+            document.querySelector("#active").style.color="black";
+
+
+           
+        }
+        
+
+
+
+
+        
+        
+
+    </script>
+</body>
+</html>
